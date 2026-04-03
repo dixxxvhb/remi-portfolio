@@ -4,8 +4,9 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 const NAV_LINKS = ['About', 'Gallery', 'Reel', 'Resume', 'Contact']
 
 const STATS = [
-  { label: 'Age', value: '11' },
-  { label: 'Height', value: "4'5\"" },
+  { label: 'Age', value: '12' },
+  { label: 'Height', value: "4'10\"" },
+  { label: 'Weight', value: '86 lbs' },
   { label: 'Hair', value: 'Brown' },
   { label: 'Eyes', value: 'Brown' },
   { label: 'Vocal Range', value: 'B3 – D5' },
@@ -26,7 +27,7 @@ const GALLERY_IMAGES = [
 const EXPERIENCE = [
   { production: 'Competition Dance Team', role: 'Dancer / Soloist', venue: 'Celebration Arts Academy, FL', director: 'Dixon Van Hoozer-Bowles' },
   { production: 'Mary Poppins Jr.', role: 'Ensemble', venue: 'Creation Village World School, FL', director: 'Janie Rutherford' },
-  { production: 'Take It From the Top', role: 'Participant', venue: 'Dr. Phillips Performing Arts Center, FL', director: 'Paul Canaan' },
+  { production: 'Take It From the Top', role: 'Participant', venue: 'Dr. Phillips Performance Arts Center, FL', director: 'Paul Canaan' },
   { production: 'Talent Show / Monologue', role: 'Ensemble / Sara', venue: 'Creation Village World School, FL', director: 'Lori Rucker' },
   { production: 'Little Foxes (Monologue)', role: 'Alexandra', venue: 'Celebration Arts Academy, FL', director: 'Malik Van Hoozer-Bowles' },
   { production: 'A Little Princess (Monologue)', role: 'Sara', venue: 'Celebration Arts Academy, FL', director: 'Malik Van Hoozer-Bowles' },
@@ -37,8 +38,8 @@ const TRAINING = [
   { discipline: 'Contemporary, Jazz, Lyrical', instructor: 'Dixon Van Hoozer-Bowles' },
   { discipline: 'Ballet and Heels', instructor: 'Christina Gerrity' },
   { discipline: 'Tap', instructor: 'Madi Del Rio-Sprague' },
-  { discipline: 'Hip Hop and Jazz Funk', instructor: 'Madison Riley' },
-  { discipline: 'Acro/Tumbling', instructor: 'Gabriella Vultaggio' },
+  { discipline: 'Hip Hop', instructor: 'Percy Nelson' },
+  { discipline: 'Acro/Tumbling', instructor: 'Tracie Evans' },
   { discipline: 'Musical Theater and Acting', instructor: 'Malik Van Hoozer-Bowles' },
   { discipline: 'Private Voice', instructor: 'Nadya Borno' },
 ]
@@ -241,11 +242,20 @@ function About() {
                 Meet Remi Jo
               </h2>
               <p className="font-body text-lg text-warm-gray leading-relaxed mb-8 max-w-lg">
-                Hi! I'm Remi Jo — an 11-year-old dancer, actress, and model based in Orlando, Florida. I've been performing since I was little, and I love everything from contemporary and jazz to musical theater and acting. When I'm not in the studio or on stage, you can find me riding my bike, practicing hula hoop tricks, or hanging out with animals. I'm currently training and auditioning, and I can't wait to see where this journey takes me!
+                Hi! I'm Remi Jo — a 12-year-old dancer, actress, and model based in Orlando, Florida. I've been performing since I was little, and I love everything from contemporary and jazz to musical theater and acting. When I'm not in the studio or on stage, you can find me riding my bike, practicing hula hoop tricks, or hanging out with animals. I'm currently training and auditioning, and I can't wait to see where this journey takes me!
               </p>
 
+              {/* Agency */}
+              <div className="mb-6 px-4 py-3 bg-lavender/10 rounded-lg border border-lavender/20 inline-block">
+                <span className="font-detail text-xs uppercase tracking-widest text-warm-gray/70">Agency: </span>
+                <span className="font-body font-bold text-charcoal text-sm">Known Management Group</span>
+                <span className="font-detail text-warm-gray text-sm mx-2">|</span>
+                <span className="font-detail text-xs uppercase tracking-widest text-warm-gray/70">Agent: </span>
+                <span className="font-body font-bold text-charcoal text-sm">Matthew Gonzalez</span>
+              </div>
+
               {/* Stats */}
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              <div className="grid grid-cols-3 md:grid-cols-7 gap-4">
                 {STATS.map((stat) => (
                   <div key={stat.label} className="text-center">
                     <div className="font-detail text-xs uppercase tracking-widest text-warm-gray/70 mb-1">{stat.label}</div>
