@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
+const BASE = import.meta.env.BASE_URL
+
 // ─── Data ────────────────────────────────────────────────────────
 const NAV_LINKS = ['About', 'Gallery', 'Reel', 'Resume', 'Contact']
 
@@ -14,14 +16,14 @@ const STATS = [
 ]
 
 const GALLERY_IMAGES = [
-  { src: '/images/gallery-1.jpg', alt: 'Remi Jo Russell dramatic headshot in gold top' },
-  { src: '/images/gallery-4.jpg', alt: 'Remi Jo Russell full-body modeling shot with sunglasses' },
-  { src: '/images/gallery-3.jpg', alt: 'Remi Jo Russell headshot in denim overalls' },
-  { src: '/images/gallery-2.jpg', alt: 'Remi Jo Russell dramatic headshot with dark background' },
-  { src: '/images/gallery-5.jpg', alt: 'Remi Jo Russell standing modeling pose with heart sunglasses' },
-  { src: '/images/gallery-7.jpg', alt: 'Remi Jo Russell close-up headshot' },
-  { src: '/images/gallery-6.jpg', alt: 'Remi Jo Russell seated modeling pose on chair' },
-  { src: '/images/gallery-8.jpg', alt: 'Remi Jo Russell full-body casual modeling shot' },
+  { src: `${BASE}images/gallery-1.jpg`, alt: 'Remi Jo Russell dramatic headshot in gold top' },
+  { src: `${BASE}images/gallery-4.jpg`, alt: 'Remi Jo Russell full-body modeling shot with sunglasses' },
+  { src: `${BASE}images/gallery-3.jpg`, alt: 'Remi Jo Russell headshot in denim overalls' },
+  { src: `${BASE}images/gallery-2.jpg`, alt: 'Remi Jo Russell dramatic headshot with dark background' },
+  { src: `${BASE}images/gallery-5.jpg`, alt: 'Remi Jo Russell standing modeling pose with heart sunglasses' },
+  { src: `${BASE}images/gallery-7.jpg`, alt: 'Remi Jo Russell close-up headshot' },
+  { src: `${BASE}images/gallery-6.jpg`, alt: 'Remi Jo Russell seated modeling pose on chair' },
+  { src: `${BASE}images/gallery-8.jpg`, alt: 'Remi Jo Russell full-body casual modeling shot' },
 ]
 
 const EXPERIENCE = [
@@ -192,7 +194,7 @@ function Hero() {
         <div className="animate-slide-up mb-8">
           <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl mx-auto">
             <img
-              src="/images/hero-headshot.jpg"
+              src={`${BASE}images/hero-headshot.jpg`}
               alt="Remi Jo Russell smiling headshot"
               className="w-full h-full object-cover object-top"
             />
@@ -230,7 +232,7 @@ function About() {
             {/* Photo */}
             <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden shadow-lg shrink-0">
               <img
-                src="/images/about-photo.jpg"
+                src={`${BASE}images/about-photo.jpg`}
                 alt="Remi Jo Russell wearing a headband and green jumper"
                 className="w-full h-full object-cover object-top"
               />
@@ -375,10 +377,10 @@ function Reel() {
             <video
               controls
               preload="metadata"
-              poster="/images/hero-headshot.jpg"
+              poster={`${BASE}images/hero-headshot.jpg`}
               className="w-full block"
             >
-              <source src="/video/reel.mp4" type="video/mp4" />
+              <source src={`${BASE}video/reel.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -500,7 +502,7 @@ function Resume() {
         {/* Download button */}
         <FadeUp className="text-center">
           <a
-            href="/Remi_Jo_Russell_Resume.pdf"
+            href={`${BASE}Remi_Jo_Russell_Resume.pdf`}
             download
             className="inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white font-body font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm tracking-wide uppercase"
           >
